@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="drag-container">
+                <div class="section-heading">Dragged items</div>
+
+                <div cdkDropList #draggedList="cdkDropList" [cdkDropListConnectedTo]="[dragLists]" [cdkDropListData]="draggedItems"
+                    (cdkDropListDropped)="drop($event)">
+                    <div *ngFor="let item of draggedItems" cdkDrag>                        
+                       <p>{{item?.type}}</p>
+                        <p>{{item?.controlDetails?.heading}}</p>
+                        <p>{{item?.controlDetails?.text}}</p>
+                        <p [attr.innerHTML]="item?.controlDetails?.control"></p>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="col-md-6">
+            <div class="drag-container">
+                <div class="section-heading">Drag Items from the List!!!</div>
+                <div cdkDropList #dragLists="cdkDropList" [cdkDropListConnectedTo]="[draggedList]" [cdkDropListData]="dragList" (cdkDropListDropped)="drop($event)">
+                    <div *ngFor="let item of dragList" cdkDrag>{{item.type}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

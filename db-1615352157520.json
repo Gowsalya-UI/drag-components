@@ -1,0 +1,20 @@
+{
+  "uicomponents": [
+    {
+      "type": "TextBox",
+      "controlDetails": {
+        "heading": "TextBox",
+        "control": "",
+        "text": "This is textbox component"
+      }
+    },
+    {
+      "type": "Button",
+      "controlDetails": {
+        "heading": "Button",
+        "control": "",
+        "text": "This is button component  "
+      }
+    }
+  ]
+}
